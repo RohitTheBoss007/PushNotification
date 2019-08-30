@@ -2,10 +2,12 @@
 <resources>
     <color name="colorPrimary">#FC5700</color>
     <color name="colorPrimaryDark">#FF0000</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="colorRed">#E43F3F</color>
-
+    <color name="iron">#CCCCCC</color>
+    <color name="primary">#E43F3F</color>
     <color name="TextTabLight">#ffb08b</color>
     <color name="TextTabBright">#ffffff</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

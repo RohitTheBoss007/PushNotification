@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendActivity">
+
+    <TextView
+        android:id="@+id/sendto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:text="Send To..."
+        android:textSize="18sp"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="15dp">
+
+
+        <EditText
+            android:id="@+id/etmessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Notification Message"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:textColorHint="@color/iron" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="20dp"
+        android:textSize="18sp"
+        android:background="@drawable/button_default"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:fontFamily="@font/nunito_semibold"
+        android:text="Send Notification" />
+</RelativeLayout>

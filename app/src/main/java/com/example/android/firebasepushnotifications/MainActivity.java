@@ -1,5 +1,6 @@
 package com.example.android.firebasepushnotifications;
 
+import  android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -10,12 +11,16 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
     TextView mProfileLabel;
     TextView mUsersLabel;
     TextView mNotificationLabel;
 
     ViewPager mMainPager;
+    FirebaseAuth mAuth;
 
     PagerViewAdapter mPagerViewAdapter;
 
@@ -23,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth=FirebaseAuth.getInstance();
         mProfileLabel=findViewById(R.id.profileLabel);
         mUsersLabel=findViewById(R.id.UsersLabel);
         mNotificationLabel=findViewById(R.id.notificationsLabel);
+
+        //startActivity(new Intent(MainActivity.this,LoginActivity.class));
 
 
 
@@ -37,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mMainPager=findViewById(R.id.mainPager);
+        mMainPager.setOffscreenPageLimit(2);
         mPagerViewAdapter=new PagerViewAdapter(getSupportFragmentManager());
 
         mProfileLabel.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +86,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        if(currentUser==null)
+        {
+            Intent loginIntent=new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
