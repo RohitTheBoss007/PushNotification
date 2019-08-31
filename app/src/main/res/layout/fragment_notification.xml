@@ -14,13 +14,10 @@
         android:layout_margin="15dp">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/notif_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:padding="20dp"
-
-        android:text="Notification" />
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
 
