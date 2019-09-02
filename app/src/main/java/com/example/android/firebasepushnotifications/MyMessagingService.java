@@ -13,8 +13,8 @@ import com.google.firebase.messaging.RemoteMessage;
 
 public class MyMessagingService extends FirebaseMessagingService {
 
-    @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+  /*  @Override
+   public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         String title=remoteMessage.getNotification().getTitle();
         String message=remoteMessage.getNotification().getBody();
@@ -48,5 +48,5 @@ public class MyMessagingService extends FirebaseMessagingService {
 
         NotificationManagerCompat manager=NotificationManagerCompat.from(this);
         manager.notify(mNotificationId,builder.build());
-    }
+    }*/
 }
