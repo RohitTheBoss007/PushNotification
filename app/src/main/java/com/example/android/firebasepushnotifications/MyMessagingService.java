@@ -28,8 +28,6 @@ public class MyMessagingService extends FirebaseMessagingService {
             NotificationManager manager=getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
 
-
-
         }
         Intent resultIntent = new Intent(click_action);
         resultIntent.putExtra("message",messageData);

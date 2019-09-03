@@ -37,7 +37,12 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
 
-        <activity android:name=".NotificationActivity"
+        <activity
+            android:name=".NotificationActivity"
+            android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".TargetActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.example.android.firebasepushnotifications.TargetActivity" />
@@ -46,7 +51,7 @@
             </intent-filter>
 
 
-        </activity>
+            </activity>
     </application>
 
 </manifest>
